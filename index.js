@@ -36,6 +36,8 @@ app.use(
   })
 );
 
+// Enable pre-flight across-the-board
+app.options("*", cors());
 
 app.get("/", (req, res) => {
   res.json({ data: "Hello Shubham" });
