@@ -23,7 +23,9 @@ app.use(express.json());
 // app.use(express.static(path.join(__dirname, '../frontend/notes-app/dist')))
 
 const allowedOrigins = [
-  'https://rainbow-kelpie-1ec452.netlify.app'
+  'https://rainbow-kelpie-1ec452.netlify.app',
+  'https://legendary-capybara-a0c644.netlify.app/login',
+  'http://localhost:5173'
 ];
 
 app.use(
