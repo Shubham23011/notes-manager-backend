@@ -1,4 +1,6 @@
-require("dotenv").config();
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 // const path = require("path")
 
@@ -23,12 +25,13 @@ app.use(express.json());
 
 app.use(
   cors({
-    // origin: "https://notes-application-2.onrender.com",
-    origin: "*",
-    method:["GET","POST","PUT","DELETE"], 
-    credentials:true,
+    origin: process.env.FRONTEND_URL || "*",  // Using environment variable for flexibility
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,  // Only enable this if you're using cookies or sessions
+    allowedHeaders: ["Content-Type", "Authorization"],  // Ensure your headers are properly managed
   })
 );
+
 
 app.get("/", (req, res) => {
   res.json({ data: "Hello Shubham" });
