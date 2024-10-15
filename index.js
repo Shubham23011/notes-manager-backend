@@ -1,12 +1,12 @@
-const dotenv = require("dotenv")
-dotenv.config()
-
-// const path = require("path")
+const dotenv = require("dotenv");
+dotenv.config();
 
 const config = require("./config.json");
 const mongoose = require("mongoose");
 
-mongoose.connect(config.connectionString).then(() => console.log('MongoDB connected')).catch(err => console.log('MongoDB connection error:', err));
+mongoose.connect(config.connectionString)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log('MongoDB connection error:', err));
 
 const User = require("./models/user.model");
 const Note = require("./models/note.model");
@@ -20,20 +20,20 @@ const { authenticateToken } = require("./utilities");
 
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname, '../frontend/notes-app/dist')))
-
+// CORS configuration
 const allowedOrigins = [
   'https://rainbow-kelpie-1ec452.netlify.app',
   'https://legendary-capybara-a0c644.netlify.app/login',
   'http://localhost:5173'
 ];
 
+// Apply CORS middleware
 app.use(
   cors({
-    origin: allowedOrigins,  // Using environment variable for flexibility
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,  // Only enable this if you're using cookies or sessions
-    allowedHeaders: ["Content-Type", "Authorization"],  // Ensure your headers are properly managed
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
