@@ -23,14 +23,13 @@ app.use(express.json());
 // app.use(express.static(path.join(__dirname, '../frontend/notes-app/dist')))
 
 const allowedOrigins = [
-  'https://rainbow-kelpie-1ec452.netlify.app',
-  'https://ubiquitous-choux-42e54f.netlify.app' // Add any other origins you need to allow
+  'https://rainbow-kelpie-1ec452.netlify.app'
 ];
 
 app.use(
   cors({
     origin: allowedOrigins,  // Using environment variable for flexibility
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,  // Only enable this if you're using cookies or sessions
     allowedHeaders: ["Content-Type", "Authorization"],  // Ensure your headers are properly managed
   })
