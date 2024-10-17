@@ -30,6 +30,10 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: '*',
+    headers:{
+      "Access-Control-Allow-Origin":"*",
+      "Access-Control-Allow-Credentials":true
+    },
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
