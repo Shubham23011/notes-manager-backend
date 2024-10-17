@@ -27,7 +27,8 @@ app.use(express.json());
 const allowedOrigins = [
   'http://localhost:5173',
   'https://notes-manager-application.netlify.app/login',
-  'https://notes-manager-frontend-app.vercel.app/login'
+  'https://notes-manager-frontend-app.vercel.app/login',
+  'https://boisterous-swan-4bd90a.netlify.app/login'
 ];
 
 // Apply CORS middleware
