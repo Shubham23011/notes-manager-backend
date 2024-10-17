@@ -26,7 +26,7 @@ app.use(express.json());
 // CORS configuration
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://notes-app-manager.netlify.app'
+  'https://notes-manager-application.netlify.app/login'
 ];
 
 // Apply CORS middleware
