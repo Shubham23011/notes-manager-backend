@@ -6,7 +6,10 @@ const mongoose = require("mongoose");
 
 mongoose.connect(config.connectionString)
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log('MongoDB connection error:', err));
+  .catch(err => {
+    console.log('MongoDB connection error:', err)
+    process.exit()
+  });
 
 const User = require("./models/user.model");
 const Note = require("./models/note.model");
