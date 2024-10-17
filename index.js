@@ -23,8 +23,7 @@ app.use(express.json());
 // CORS configuration
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://notes-manager-backend-wz0z.onrender.com/',
-  'https://notes-app-manager.netlify.app/'
+  'https://notes-app-manager.netlify.app'
 ];
 
 // Apply CORS middleware
